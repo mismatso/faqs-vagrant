@@ -72,4 +72,6 @@ Una vez habilitada la herramienta _Local Security Policy_ (`secpol.msc`), siga l
 
    ![Aplicar cambios](/images/symlink/08-confirm-changes.jpg)
 
+10. Reinicie su equipo: Para que los permisos de _creación vínculos simbólicos_ surtan efecto, es necesario volver a reiniciar su equipo, de lo contrario el error persistirá.
+
 Con estos pasos, habrá habilitado la creación de enlaces simbólicos para su usuario en Windows _Home Edition_. Esta funcionalidad es especialmente útil para desarrolladores que trabajan con herramientas como _NPM_ y _Vagrant_, las cuales a menudo requieren la creación de symlinks para la correcta instalación de dependencias.
