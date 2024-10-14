@@ -2,7 +2,7 @@
 
 # **Habilitar autenticación con Laravel/UI**
 
-## 1. Instalar Node Version Manager (NVM)
+## 1. **Instalar Node Version Manager (NVM)**
 
 Para utilizar diferentes versiones de NodeJS en nuestro servidor web, lo más conveniente es instalar primero un gestor de versiones de Node, como _NVM-Sh_.
 
@@ -28,7 +28,7 @@ Si en cualquier momento deseamos cambiar la versión _default_, simplemente ejec
 nvm alias default lts/erbium
 ```
 
-## 2. Instalar Laravel/UI
+## 2. **Instalar Laravel/UI**
 
 Ahora instalamos _laravel/ui_. Para trabajar con Laravel 8.6.12, instalamos una versión de _laravel/ui_ cercana a la fecha de lanzamiento, que es la 3.4.6.
 
@@ -48,7 +48,7 @@ Instalamos las dependencias de NodeJS necesarias para Laravel UI.
 npm install && npm run dev
 ```
 
-## 3. Posibles errores
+## 3. **Posibles errores**
 
 ### 3.1. Memoria RAM insuficiente
 
@@ -111,7 +111,7 @@ Y nuevamente instalamos las dependencias de NodeJS.
 npm install && npm run dev
 ```
 
-## 4. Conectar Laravel con la base de datos
+## 4. **Conectar Laravel con la base de datos**
 
 Para este paso, debemos editar el archivo `.env` ubicado en la raíz de nuestro proyecto _Laravel_.
 
@@ -145,3 +145,9 @@ Posteriormente podremos hacer «Login».
 Para finalmente llegar al _dashboard_ de usuario autenticado.
 
 ![Registrando un nuevo usuario](/images/database-server/authenticated-john.png)
+
+## 5. **Errores comunes**
+
+Si aparece un error similar al mostrado en la siguiente imagen, puede deberse a que el servidor de base de datos no está disponible (apagado) o a que no se han ejecutado las migraciones con `php artisan migrate`.
+
+![Base de datos no disponible](/images/database-server/database-not-available.png)
