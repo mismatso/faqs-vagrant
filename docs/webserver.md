@@ -88,7 +88,7 @@ sudo nano /etc/hosts
 
 Luego de reemplazar _bookworm_ por el nuevo nombre de _host_, en este caso _webserver_, presionamos `[Ctrl]+O` seguido de `[Enter]` para guardar, y luego `[Ctrl]+X` para salir.
 
-![Editar archivo hosts](./images/webserver/rename-host.png)
+![Editar archivo hosts](/images/webserver/rename-host.png)
 
 Para aplicar el cambio, salimos de la máquina virtual y volvemos a conectarnos.
 
@@ -314,4 +314,4 @@ sudo systemctl restart apache2
 
 Ahora, visitamos [http://lospatitos.com](http://lospatitos.com) desde la máquina anfitriona para ver el sitio desplegado.
 
-![Vista preliminar de LosPatitos.com](./images/webserver/site-lospatitos.png)
+![Vista preliminar de LosPatitos.com](/images/webserver/site-lospatitos.png)

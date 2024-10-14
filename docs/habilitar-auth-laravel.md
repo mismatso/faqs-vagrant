@@ -75,7 +75,7 @@ vagrant up
 
 Otro error posible durante la ejecución de `npm install` es la imposibilidad de crear enlaces simbólicos (_symlinks_).
 
-![Error de symlink](./images/symlink/00-symlink-error.png)
+![Error de symlink](/images/symlink/00-symlink-error.png)
 
 Si utiliza **Windows Home Edition**, puede seguir las instrucciones indicadas en este [guion](https://github.com/mismatso/faqs-vagrant/blob/master/symlink-error.md) para habilitar los _symlinks_.
 

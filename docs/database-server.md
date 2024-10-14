@@ -82,7 +82,7 @@ sudo nano /etc/hosts
 
 Luego de reemplazar _bookworm_ por el nuevo nombre, en este caso _database_, presionamos `[Ctrl]+O` seguido de `[Enter]` para guardar, y luego `[Ctrl]+X` para salir.
 
-!["Editar archivo hosts"](./images/database-server/rename-host.png)
+!["Editar archivo hosts"](/images/database-server/rename-host.png)
 
 Para verificar los cambios, salimos y volvemos a conectarnos a la máquina virtual.
 
@@ -113,7 +113,7 @@ Si hemos instalado MySQL en otra máquina, por ejemplo, el _webserver_, podemos 
 
 Verificamos que ambas instancias (la base de datos y el servidor web) estén en ejecución.
 
-!["En VirtualBox vemos dos VMs en ejecución"](./images/database-server/vms-runnig.png)
+!["En VirtualBox vemos dos VMs en ejecución"](/images/database-server/vms-runnig.png)
 
 Asegúrese de estar conectado a la máquina virtual de _webserver_. Su símbolo del sistema debería indicar algo como esto `vagrant@webserver:~$`.
 
