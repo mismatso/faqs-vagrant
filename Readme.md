@@ -3,6 +3,7 @@
 # FAQs de Vagrant/VirtualBox
 
 - [Aprovisionar un servidor web](./webserver.md)
+- [Instalar Composer](./install-composer.md)
 - [Aprovisionar un servidor de base de datos](./database-server.md)
 - [Habilitar las vistas de autenticación de Laravel 8.6.12](./habilitar-auth-laravel.md)
 - [Error de Symlinks en Windows Home](./symlink-error.md)

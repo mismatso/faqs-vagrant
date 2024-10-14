@@ -1,10 +1,12 @@
-# Error de Symlink en Windows
+[⬅ Volver al índice](/Readme.md)
+
+# **Error de Symlink en Windows**
 
 Cuando utilizamos _Vagrant_ para virtualizar sistemas operativos tipo GNU/Linux sobre Windows 7, 8, 10, 11, etc., puede presentarse un error cuando herramientas como _NPM_ intentan crear enlaces simbólicos (symlinks) al momento de instalar dependencias. Esto ocurre debido a que Windows, por defecto, no permite a los usuarios sin privilegios administrativos crear symlinks. A continuación, se explican los pasos para habilitar esta funcionalidad en ediciones de Windows como _Home Edition_, que no incluyen ciertas herramientas administrativas por defecto.
 
 !["Error de Symlink"](./images/symlink/00-symlink-error.png)
 
-## Paso 1 — Habilitar el editor de políticas de seguridad en «Windows Home Edition»
+## **Paso 1 — Habilitar el editor de políticas de seguridad en «Windows Home Edition»**
 
 Si usted utiliza Windows 7, 8, 10, 11, etc., en cualquiera de sus versiones _Home Edition_, debe seguir estos pasos para habilitar el editor de políticas de seguridad local.
 
@@ -32,7 +34,7 @@ La herramienta _«Local Security Policy»_ (`secpol.msc`), necesaria para autori
 
 4. **Reinicie su equipo**: Después de ejecutar los comandos anteriores, es necesario reiniciar su equipo para que los cambios surtan efecto y la herramienta _Local Security Policy_ esté disponible.
 
-## Paso 2 — Otorgar permisos para crear _Symlinks_
+## **Paso 2 — Otorgar permisos para crear _Symlinks_**
 
 Una vez habilitada la herramienta _Local Security Policy_ (`secpol.msc`), siga los pasos siguientes para otorgar a su usuario permisos para crear symlinks.
 

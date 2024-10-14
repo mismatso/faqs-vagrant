@@ -1,4 +1,6 @@
-# Habilitar autenticación con Laravel/UI
+[⬅ Volver al índice](/Readme.md)
+
+# **Habilitar autenticación con Laravel/UI**
 
 ## 1. Instalar Node Version Manager (NVM)
 
