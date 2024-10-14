@@ -1,6 +1,6 @@
 # Habilitar autenticación con Laravel/UI
 
-## Node Version Manager
+## 1. Instalar Node Version Manager (NVM)
 
 Para utilizar diferentes versiones de NodeJS en nuestro servidor web, lo más conveniente es instalar primero un gestor de versiones de Node, como _NVM-Sh_.
 
@@ -8,49 +8,49 @@ Para utilizar diferentes versiones de NodeJS en nuestro servidor web, lo más co
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 
-Para recargar el script de arranque de bash.
+Recargamos el script de arranque de _bash_ para que los cambios surtan efecto.
 
 ```bash
 source ~/.bashrc
 ```
 
-Ahora vamos a instalar NodeJs. En nuestro caso, como deseamos utilizarlo para trabajar en un proyecto de Laravel versión 8.6.12, debemos utilizar un release de NodeJS que haya sido liberado cerca de la fecha del lanzamiento de Laravel 8.6.12. Para este ejemplo corresponde a la versión LTS «Erbium».
+Ahora instalamos NodeJS. Para trabajar en un proyecto de Laravel versión 8.6.12, debemos utilizar una versión de NodeJS cercana a la fecha de lanzamiento de Laravel 8.6.12. En este caso, corresponde a la versión LTS «Erbium».
 
 ```bash
 nvm install --lts=erbium
 ```
 
-Si en cualquier momento deseamos cambiar la versión _default_ simplemente ejecutamos el siguiente comando.
+Si en cualquier momento deseamos cambiar la versión _default_, simplemente ejecutamos el siguiente comando:
 
 ```bash
 nvm alias default lts/erbium
 ```
 
-## Instalar Laravel/UI
+## 2. Instalar Laravel/UI
 
-Ahora vamos a instalar _laravel/ui_. En nuestro caso, como deseamos utilizarlo para trabajar en un proyecto de Laravel versión 8.6.12, debemos utilizar un release de _laravel/ui_ que haya sido liberado cerca de la fecha del lanzamiento de Laravel 8.6.12. Para este ejemplo corresponde a la versión 3.4.6.
+Ahora instalamos _laravel/ui_. Para trabajar con Laravel 8.6.12, instalamos una versión de _laravel/ui_ cercana a la fecha de lanzamiento, que es la 3.4.6.
 
 ```bash
 composer require laravel/ui:3.4.6
 ```
 
-Con el comando `php artisan ui bootstrap` integramos Bootstrap con Laravel, generando las vistas y archivos necesarios para empezar a trabajar con este framework CSS.
+Integramos _Bootstrap_ con Laravel, generando las vistas y archivos necesarios para trabajar con este framework CSS.
 
 ```bash
 php artisan ui bootstrap
 ```
 
-Con el siguiente comando instalamos las dependencias de NodeJS de Laravel UI.
+Instalamos las dependencias de NodeJS necesarias para Laravel UI.
 
 ```bash
 npm install && npm run dev
 ```
 
-## Posibles errores
+## 3. Posibles errores
 
-1. **Memoria RAM insuficiente**
+### 3.1. Memoria RAM insuficiente
 
-Si la instalación de las dependencias de _NodeJS_ falla, es altamente probable que el equipo se esté quedando corto de memoria RAM. Para aumentar la memoria debemos editar el _Vagranfile_ del _webserver_. Para esto vamos a descomentar las líneas que van de la 60 a la 66, y volvemos a comentar la 62, quedando así esta sección:
+Si la instalación de las dependencias de _NodeJS_ falla, es probable que el equipo no tenga suficiente memoria RAM. Para aumentar la memoria, editamos el _Vagrantfile_ del _webserver_. Descomentamos las líneas 60 a 66, y comentamos la línea 62. La configuración quedaría así:
 
 ```bash
   config.vm.provider "virtualbox" do |vb|
@@ -62,51 +62,56 @@ Si la instalación de las dependencias de _NodeJS_ falla, es altamente probable 
   end
 ```
 
-Para reflejar los cambios que se hicieron en el _Vagrantfile_ para aumentar la memoria, debemos apagar la máquina virtual _webserver_ y la volver a iniciarla.
+Para aplicar los cambios, apagamos y volvemos a iniciar la máquina virtual _webserver_.
 
-2. **Usuario no tiene permisos de crear _symlinks_ en SO anfitrión**
+```bash
+vagrant halt
+vagrant up
+```
 
-Otro error que podría presentarse durante la ejecución del comando `npm install`, es un relacionado con la imposibilidad de crear enlances simbólicos (symlinks).
+### 3.2. Usuario sin permisos para crear _symlinks_ en SO anfitrión
 
-![Abrir secpol.msc](./images/symlink/00-symlink-error.png)
+Otro error posible durante la ejecución de `npm install` es la imposibilidad de crear enlaces simbólicos (_symlinks_).
 
-Si usted está utilizando Windows Home Edition ejecute los que se indica en este [guion](https://github.com/mismatso/faqs-vagrant/blob/master/symlink-error.md).
+![Error de symlink](./images/symlink/00-symlink-error.png)
 
-Habiendo corregido los errores anteriores, reintentamos la instalación de las dependencias de NodeJS, para esto nos desplazamos al folder del proyecto de Laravel y ejecutamos los siguientes comandos.
+Si utiliza **Windows Home Edition**, puede seguir las instrucciones indicadas en este [guion](https://github.com/mismatso/faqs-vagrant/blob/master/symlink-error.md) para habilitar los _symlinks_.
 
-Para desplazarnos según nuestro ejemplo, ejecute el siguiente comando.
+Luego de corregir los errores anteriores, intentamos nuevamente la instalación de las dependencias de NodeJS.
+
+Nos desplazamos al directorio del proyecto Laravel.
 
 ```bash
 cd /vagrant/sites/lfts.isw811.xyz/
 ```
 
-Eliminamos los vestigios de la instalación fallida.
+Eliminamos los restos de la instalación fallida.
 
 ```bash
 rm -rf node_modules
 ```
 
-Reintentamos la instalación de las dependencias de _NodeJS_.
+Reintentamos la instalación de las dependencias de NodeJS.
 
 ```bash
 npm install && npm run dev
 ```
 
-Para habilitar las vistas de autenticación ejecutamos el siguiente comando.
+Para habilitar las vistas de autenticación, ejecutamos el siguiente comando:
 
 ```bash
 php artisan ui bootstrap --auth
 ```
 
-Y nuevamente instalamos la dependencias de NodeJS.
+Y nuevamente instalamos las dependencias de NodeJS.
 
 ```bash
 npm install && npm run dev
 ```
 
-## Conectar Laravel con base datos
+## 4. Conectar Laravel con la base de datos
 
-Para este paso necesitares editar el archivo `.env` que se ubica en la raíz de nuestro proyecto de _Laravel_.
+Para este paso, debemos editar el archivo `.env` ubicado en la raíz de nuestro proyecto _Laravel_.
 
 ```bash
 DB_CONNECTION=mysql
@@ -117,10 +122,10 @@ DB_USERNAME=laravel
 DB_PASSWORD=secret
 ```
 
-Luego nos conectamos nuevamente al _webserver_, nos desplazamos hasta el folder que contiene el sitio _Lavel_ y ejecutamos el siguiente comando, para ejecutar las migraciones de base de datos.
+Nos conectamos nuevamente al _webserver_, nos desplazamos hasta el directorio del sitio Laravel y ejecutamos el siguiente comando para ejecutar las migraciones de la base de datos.
 
 ```bash
 php artisan migrate
 ```
 
-En este punto pueden abrir su navegador y visitar el sitio, en la esquina superior derecha verá las nuevas opciones de _Login_ y _Register_. Intenten registrar un usuario para verificar que su aplicación está correctamente conectada a base de datos.
+En este punto, puede abrir su navegador y visitar el sitio. En la esquina superior derecha verá las nuevas opciones de _Login_ y _Register_. Intente registrar un usuario para verificar que la aplicación está correctamente conectada a la base de datos.

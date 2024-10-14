@@ -2,19 +2,19 @@
 
 ## 1. Aprovisionar nueva instancia de Debian Bookworm
 
-Ingresamos al folder de las máquinas _vagrant_.
+Ingresamos al directorio donde se alojarán las máquinas _Vagrant_.
 
 ```bash
 cd ~/VMs
 ```
 
-Creamos el directorio para la nueva máquina _vagrant_.
+Creamos el directorio para la nueva máquina _Vagrant_.
 
 ```bash
 mkdir database
 ```
 
-Ingresamos a la carpeta.
+Ingresamos a la carpeta creada.
 
 ```bash
 cd database
@@ -51,7 +51,7 @@ En el mismo archivo _Vagranfile_, descomentamos las líneas que van de la 59 a l
   end
 ```
 
-Tras haber guardado los cambios que hicimos en el _Vagrantfile_ estaremos listos para iniciar la nueva máquina por primera vez.
+Una vez guardados los cambios en el _Vagrantfile_, estamos listos para iniciar la nueva máquina.
 
 ```bash
 vagrant up
@@ -67,13 +67,12 @@ vagrant ssh
 
 Al conectarnos veremos que el símbolo del sistema cambia a `vagrant@bookworm`, esto nos indica que ahora estamos conectados a la nueva instancia con nombre de host _bookworm_, con el usuario _vagrant_.
 
-Para prevenir confusionar vamos a renombrar el host.
+Para evitar confusiones, vamos a cambiar el nombre del host.
 
 ```bash
 sudo hostnamectl set-hostname database
 ```
-
-Para completar el cambio de nombre del host, actualizaremos el archivo _hosts_ de la máquina virutal.
+Para completar el cambio, actualizamos el archivo _hosts_ de la máquina virtual.
 
 ```bash
 sudo nano /etc/hosts
@@ -83,7 +82,7 @@ Luego de reemplazar _bookworm_ por el nuevo nombre, en este caso _database_, pre
 
 !["Editar archivo hosts"](./images/database-server/rename-host.png)
 
-Para visualizar los cambios salimos y reingresamos a la máquina virtual.
+Para verificar los cambios, salimos y volvemos a conectarnos a la máquina virtual.
 
 ```bash
 exit
@@ -108,9 +107,9 @@ sudo apt-get install mariadb-server mariadb-client
 
 ## 4. Desinstalar MySQL
 
-Si hubiéramos instalado MySQL en otro servidor, por ejemplo, el _webserver_, procederemos a desinstalarlo.
+Si hemos instalado MySQL en otra máquina, por ejemplo, el _webserver_, podemos proceder a desinstalarlo.
 
-En este punto ambas instancias deben estar en ejecución.
+Verificamos que ambas instancias (la base de datos y el servidor web) estén en ejecución.
 
 !["En VirtualBox vemos dos VMs en ejecución"](./images/database-server/vms-runnig.png)
 
@@ -125,47 +124,45 @@ sudo apt-get autoremove
 
 ## 5. Crear usuario y base datos en MySQL
 
-En este punto asegúrese de estar conectado a la máquina virtual de _database_. Su símbolo del sistema debería indicar algo como esto `vagrant@database:~$`.
-
-Nos conectamos a MySQL como superusuario.
+Conéctese a la máquina virtual _database_ y acceda a MySQL como superusuario.
 
 ```bash
 sudo mysql
 ```
 
-Notará que el símbolo del sistema ahora se ve así `MariaDB [(none)]>`, esto significa que está conectado al CLI de MySQL.
+El símbolo del sistema ahora debería verse así `MariaDB [(none)]>`, lo que indica que está conectado al CLI de MySQL.
 
-Para verificar las bases de datos existentes.
+Para listar las bases de datos existentes:
 
-```mysql
+```sql
 show databases;
 ```
 
-Para crear una nueva base de datos.
+Para crear una nueva base de datos llamada _lfts_:
 
-```mysql
+```sql
 create database lfts;
 ```
 
-Luego crearemos un usuario llamada _laravel_ y le asignaremos la contraseña _secret_.
+Luego, creamos un usuario llamado _laravel_ con la contraseña _secret_.
 
-```mysql
-create user laravel identified by 'secret';
+```sql
+create user 'laravel'@'localhost' identified by 'secret';
 ```
 
-Ahora vamos a garantizarle todos los permisos al usuario _laravel_ sobre la base de datos _lfts_.
+Asignamos todos los permisos al usuario _laravel_ sobre la base de datos _lfts_:
 
-```mysql
-grant all privileges on lfts.* to laravel;
+```sql
+grant all privileges on lfts.* to 'laravel'@'localhost';
 ```
 
-Ahora recargamos los permisos para que los cambios surtan efecto.
+Recargamos los permisos:
 
-```mysql
+```sql
 flush privileges;
 ```
 
-Y salimos del CLI de MySQL.
+Salimos del CLI de MySQL.
 
 ```bash
 exit
