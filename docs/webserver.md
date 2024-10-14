@@ -113,6 +113,8 @@ sudo apt-get install vim vim-nox curl apache2 mariadb-client php8.2 php8.2-curl 
 
 Para verificar el correcto funcionamiento de Apache, podemos visitar [http://192.168.56.10](http://192.168.56.10) desde el navegador de la máquina anfitriona.
 
+![Sitio por defecto de Apache2](/images/webserver/default-site.png)
+
 ## 4. Agregar entradas al archivo _hosts_ en la máquina anfitriona
 
 Para simular la resolución de un dominio en nuestro servidor, agregamos entradas en el archivo _hosts_ de la máquina anfitriona.

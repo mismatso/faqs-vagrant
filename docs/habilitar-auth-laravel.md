@@ -131,3 +131,17 @@ php artisan migrate
 ```
 
 En este punto, puede abrir su navegador y visitar el sitio. En la esquina superior derecha verá las nuevas opciones de _Login_ y _Register_. Intente registrar un usuario para verificar que la aplicación está correctamente conectada a la base de datos.
+
+![Sitio LFTS con enlace de Login y Register](/images/webserver/site-lfts-with-auth.png)
+
+Si hacemos clic en _«Register»_ podremos registrar un nuevo usuario.
+
+![Registrando un nuevo usuario](/images/database-server/register-john.png)
+
+Posteriormente podremos hacer «Login».
+
+![Registrando un nuevo usuario](/images/database-server/login-john.png)
+
+Para finalmente llegar al _dashboard_ de usuario autenticado.
+
+![Registrando un nuevo usuario](/images/database-server/authenticated-john.png)

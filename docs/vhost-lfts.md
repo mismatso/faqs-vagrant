@@ -128,4 +128,4 @@ sudo systemctl restart apache2
 
 Ahora, visitamos [http://lfts.isw811.xyz](http://lfts.isw811.xyz) desde la máquina anfitriona para ver el sitio desplegado.
 
-![Vista preliminar de lfts.isw811.xyz](/images/webserver/site-lfts-witout-auth.png)
+![Vista preliminar de lfts.isw811.xyz](/images/webserver/site-lfts-without-auth.png)
