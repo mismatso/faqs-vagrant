@@ -77,7 +77,7 @@ Otro error posible durante la ejecución de `npm install` es la imposibilidad de
 
 ![Error de symlink](/images/symlink/00-symlink-error.png)
 
-Si utiliza **Windows Home Edition**, puede seguir las instrucciones indicadas en este [guion](https://github.com/mismatso/faqs-vagrant/blob/master/symlink-error.md) para habilitar los _symlinks_.
+Si utiliza **Windows Home Edition**, puede seguir las instrucciones indicadas en este [guion](https://github.com/mismatso/faqs-vagrant/blob/master/docs/symlink-error.md) para habilitar los _symlinks_.
 
 Luego de corregir los errores anteriores, intentamos nuevamente la instalación de las dependencias de NodeJS.
 
