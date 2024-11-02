@@ -1,4 +1,4 @@
-[⬅ Volver al índice](/Readme.md)
+[↩︎ Volver al índice](/README.md)
 
 # **Creando instancia de base datos con Vagrant/VirtualBox**
 

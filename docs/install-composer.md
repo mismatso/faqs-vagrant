@@ -1,4 +1,4 @@
-[⬅ Volver al índice](/Readme.md)
+[↩︎ Volver al índice](/README.md)
 
 # **Instalación de Composer en el _webserver_**
 

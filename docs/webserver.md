@@ -1,4 +1,4 @@
-[⬅ Volver al índice](/Readme.md)
+[↩︎ Volver al índice](/README.md)
 
 # Creación de instancia de servidor web con Vagrant/VirtualBox
 

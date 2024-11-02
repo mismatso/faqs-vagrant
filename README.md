@@ -2,12 +2,21 @@
 
 # FAQs de Vagrant/VirtualBox
 
+## Recursos generales para Vagrant
+
 - [Aprovisionar un servidor web](/docs/webserver.md)
 - [Instalar Composer](/docs/install-composer.md)
-- [Crear VHOST para LFTS](/docs/vhost-lfts.md)
 - [Aprovisionar un servidor de base de datos](/docs/database-server.md)
-- [Habilitar las vistas de autenticación de Laravel 8.6.12](/docs/habilitar-auth-laravel.md)
 - [Error de Symlinks en Windows Home](/docs/symlink-error.md)
+
+## Recursos para el curso «Laravel from the Scratch v8»
+
+- [Crear VHOST para LFTS](/docs/lfts8/vhost-lfts.md)
+- [Habilitar las vistas de autenticación de Laravel 8.6.12](/docs/lfts8/habilitar-auth-laravel.md)
+
+## Recursos para el curso «30 days to learn Laravel 11»
+
+- [Migrar de «30days» a «Pixel Positions»](/docs/30days/30days-to-pixel.md)
 
 ## «Self-Promotion»
 

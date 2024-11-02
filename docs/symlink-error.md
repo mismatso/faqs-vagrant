@@ -1,4 +1,4 @@
-[⬅ Volver al índice](/Readme.md)
+[↩︎ Volver al índice](/README.md)
 
 # **Error de Symlink en Windows**
 

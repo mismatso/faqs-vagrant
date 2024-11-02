@@ -1,4 +1,4 @@
-[⬅ Volver al índice](/Readme.md)
+[↩︎ Volver al índice](/README.md)
 
 # **Habilitar un Virtual Host para LFTS (Laravel From The Scratch)**
 
