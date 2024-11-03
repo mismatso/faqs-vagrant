@@ -16,7 +16,7 @@
 
 ## Recursos para el curso «30 days to learn Laravel 11»
 
-- [Configurar Vite para funcionar en entorno virtualizado](/docs/30days/vite-with-vagrant.md)
+- [Configurar Vite para funcionar en un entorno virtualizado](/docs/30days/vite-with-vagrant.md)
 - [Migrar de «30days» a «Pixel Positions»](/docs/30days/30days-to-pixel.md)
 
 ## «Self-Promotion»
